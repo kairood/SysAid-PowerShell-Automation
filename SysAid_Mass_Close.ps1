@@ -15,9 +15,7 @@ Function Close-SysAidTickets {
     [Parameter(Mandatory=$true)]
     [string]$JSESSIONID,
     [Parameter(Mandatory=$true)]
-    [string]$SysAidURL,
-    [Parameter(Mandatory=$true)]
-    [string]$CloseMessage
+    [string]$SysAidURL
 
     )
 
@@ -79,7 +77,7 @@ $props = @{
     Body        = $Body
 }
 
-Write-Verbose -Message "Closing $SysaidID Request with solution $CloseMessage" -Verbose
+Write-Verbose -Message "Closing $SysaidID Request with solution $SysAidSolution" -Verbose
 
 Invoke-RestMethod @props
 
